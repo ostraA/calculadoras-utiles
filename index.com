@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadoras Rápidas</title>
+
+<style>
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+margin:0;
+padding:40px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+.box{
+background:#1e293b;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+input{
+padding:8px;
+margin:5px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:8px 15px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Calculadoras Online</h1>
+<p>Herramientas simples para cálculos rápidos.</p>
+
+<div class="box">
+<h3>Porcentaje de un número</h3>
+<input id="p1" placeholder="%">
+<input id="n1" placeholder="Número">
+<button onclick="porcentaje()">Calcular</button>
+<div class="result" id="r1"></div>
+</div>
+
+<div class="box">
+<h3>Aumento porcentual</h3>
+<input id="a1" placeholder="Valor inicial">
+<input id="a2" placeholder="Valor final">
+<button onclick="aumento()">Calcular</button>
+<div class="result" id="r2"></div>
+</div>
+
+<div class="box">
+<h3>Reducción porcentual</h3>
+<input id="d1" placeholder="Precio original">
+<input id="d2" placeholder="Precio con descuento">
+<button onclick="descuento()">Calcular</button>
+<div class="result" id="r3"></div>
+</div>
+
+<div class="box">
+<h3>Calculadora de propina</h3>
+<input id="t1" placeholder="Cuenta total">
+<input id="t2" placeholder="% propina">
+<button onclick="propina()">Calcular</button>
+<div class="result" id="r4"></div>
+</div>
+
+<div class="box">
+<h3>Interés simple</h3>
+<input id="i1" placeholder="Capital">
+<input id="i2" placeholder="Interés %">
+<input id="i3" placeholder="Años">
+<button onclick="interes()">Calcular</button>
+<div class="result" id="r5"></div>
+</div>
+
+</div>
+
+<script>
+
+function porcentaje(){
+let p=document.getElementById("p1").value;
+let n=document.getElementById("n1").value;
+let r=(p/100)*n;
+document.getElementById("r1").innerText="Resultado: "+r;
+}
+
+function aumento(){
+let a=document.getElementById("a1").value;
+let b=document.getElementById("a2").value;
+let r=((b-a)/a)*100;
+document.getElementById("r2").innerText="Aumento: "+r.toFixed(2)+"%";
+}
+
+function descuento(){
+let a=document.getElementById("d1").value;
+let b=document.getElementById("d2").value;
+let r=((a-b)/a)*100;
+document.getElementById("r3").innerText="Descuento: "+r.toFixed(2)+"%";
+}
+
+function propina(){
+let a=document.getElementById("t1").value;
+let b=document.getElementById("t2").value;
+let r=(b/100)*a;
+document.getElementById("r4").innerText="Propina: "+r;
+}
+
+function interes(){
+let c=document.getElementById("i1").value;
+let r=document.getElementById("i2").value;
+let t=document.getElementById("i3").value;
+
+let resultado=(c*r*t)/100;
+
+document.getElementById("r5").innerText="Interés generado: "+resultado;
+}
+
+</script>
+
+</body>
+</html>
