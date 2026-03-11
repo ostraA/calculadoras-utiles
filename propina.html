@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculadora de propina</title>
+<meta charset="UTF-8">
+</head>
+
+<body style="background:black;color:white;font-family:Arial;text-align:center">
+
+<h1>Calculadora de propina</h1>
+
+<input id="cuenta" placeholder="Total de la cuenta"><br><br>
+<input id="propina" placeholder="Propina %"><br><br>
+
+<button onclick="calcular()">Calcular</button>
+
+<h2 id="resultado"></h2>
+
+<script>
+function calcular(){
+
+let cuenta=document.getElementById("cuenta").value;
+let propina=document.getElementById("propina").value;
+
+let total=cuenta*(1+propina/100);
+
+document.getElementById("resultado").innerText="Total con propina: "+total;
+
+}
+</script>
+
+<br><br>
+<a href="index.html">Volver</a>
+
+</body>
+</html>
