@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <title>Calculadoras Rápidas</title>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM64TG5PJQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RM64TG5PJQ');
+</script>
+
 <style>
 body{
 font-family: Arial;
@@ -85,6 +94,58 @@ font-weight:bold;
 <div class="result" id="r4"></div>
 </div>
 
+<div class="box">
+<h3>Interés simple</h3>
+<input id="i1" placeholder="Capital">
+<input id="i2" placeholder="Interés %">
+<input id="i3" placeholder="Años">
+<button onclick="interes()">Calcular</button>
+<div class="result" id="r5"></div>
+</div>
+
+</div>
+
+<script>
+function porcentaje(){
+let p=document.getElementById("p1").value;
+let n=document.getElementById("n1").value;
+let r=(p/100)*n;
+document.getElementById("r1").innerText="Resultado: "+r;
+}
+
+function aumento(){
+let a=document.getElementById("a1").value;
+let b=document.getElementById("a2").value;
+let r=((b-a)/a)*100;
+document.getElementById("r2").innerText="Aumento: "+r.toFixed(2)+"%";
+}
+
+function descuento(){
+let a=document.getElementById("d1").value;
+let b=document.getElementById("d2").value;
+let r=((a-b)/a)*100;
+document.getElementById("r3").innerText="Descuento: "+r.toFixed(2)+"%";
+}
+
+function propina(){
+let a=document.getElementById("t1").value;
+let b=document.getElementById("t2").value;
+let r=(b/100)*a;
+document.getElementById("r4").innerText="Propina: "+r;
+}
+
+function interes(){
+let c=document.getElementById("i1").value;
+let r=document.getElementById("i2").value;
+let t=document.getElementById("i3").value;
+
+let resultado=(c*r*t)/100;
+document.getElementById("r5").innerText="Interés generado: "+resultado;
+}
+</script>
+
+</body>
+</html>
 <div class="box">
 <h3>Interés simple</h3>
 <input id="i1" placeholder="Capital">
